@@ -13,10 +13,19 @@ const initialState = {
 function reducer(state=initialState, action){
     switch (action.type) {
         case "DECREMENT":
+            console.log(action);
+
             return{
                 ...state,
                 totalAmount: state.totalAmount - action.amount,
                 username: 'bhee'
+            }
+        case "INCREMENT":
+            console.log(typeof action.amount);
+            return{
+                ...state,
+                totalAmount: state.totalAmount + parseInt(action.amount, 10     ),
+                username: 'SaverBhee'
             }
         default:
             return state;
